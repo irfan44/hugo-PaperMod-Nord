@@ -1,3 +1,5 @@
+@import "./nord.css";
+
 :root {
     --gap: 24px;
     --content-gap: 20px;
@@ -6,31 +8,31 @@
     --header-height: 60px;
     --footer-height: 60px;
     --radius: 8px;
-    --theme: #fff;
-    --entry: #fff;
-    --primary: rgba(0, 0, 0, 0.88);
-    --secondary: rgba(0, 0, 0, 0.56);
-    --tertiary: rgba(0, 0, 0, 0.16);
-    --content: rgba(0, 0, 0, 0.88);
-    --hljs-bg: #1c1d21;
-    --code-bg: #f5f5f5;
-    --border: #eee;
+    --theme: var(--nord6);
+    --entry: #fefefe;
+    --primary: var(--nord0); 
+    --secondary: var(--nord1);
+    --tertiary: var(--nord4);
+    --content: var(--nord0);
+    --hljs-bg: #1c1d21; 
+    --code-bg: #fefefe;
+    --border: var(--nord6);
 }
 
 .dark {
-    --theme: #1d1e20;
-    --entry: #2e2e33;
-    --primary: rgba(255, 255, 255, 0.84);
-    --secondary: rgba(255, 255, 255, 0.56);
-    --tertiary: rgba(255, 255, 255, 0.16);
-    --content: rgba(255, 255, 255, 0.74);
+    --theme: var(--nord0);
+    --entry: var(--nord1);
+    --primary: var(--nord6);
+    --secondary: var(--nord5);
+    --tertiary: var(--nord1);
+    --content: var(--nord4);
     --hljs-bg: #2e2e33;
-    --code-bg: #37383e;
-    --border: #333;
+    --code-bg: var(--nord1);
+    --border: var(--nord0);
 }
 
 .list {
-    background: var(--code-bg);
+    background: var(--theme);
 }
 
 .dark.list {

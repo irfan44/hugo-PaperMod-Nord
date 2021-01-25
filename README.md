@@ -49,6 +49,12 @@ Read Wiki For More Details => **[PaperMod - Features](https://github.com/adityat
 
 ---
 
+## About this fork
+
+This fork changes the original light/dark theme to **[Nord theme](https://nordtheme.com/)**. You can see example **[here](https://irfan44.github.io)**
+
+---
+
 ## Install/Update 📥
 
 Read Wiki For More Details => **[PaperMod - Installation](https://github.com/adityatelange/hugo-PaperMod/wiki/Installation)**
