@@ -12,8 +12,7 @@
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
       {{- partial "post_meta.html" . -}}
-      {{- if .IsTranslated -}}
-      {{- if or .Params.author $.Site.Params.author (.Param "ShowReadingTime") (not .Date.IsZero) }}&nbsp;|&nbsp;{{- end -}}
+      {{- if .IsTranslated -}}&nbsp;|&nbsp;
       <ul class="i18n_list">
         {{- i18n "translations" | default "Translations"}}:
         {{- range .Translations }}
@@ -32,7 +31,7 @@
     </div>
     {{- end}}
   </header>
-  {{- $isHidden := .Params.cover.hidden | default .Site.Params.cover.hiddenInSingle | default .Site.Params.cover.hidden}}
+  {{- $isHidden := ((.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInSingle) | default .Params.cover.hidden )}}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
   {{- if (.Param "ShowToc") }}
   <div class="toc">
@@ -40,15 +39,20 @@
       <summary accesskey="c" title="(Alt + C)">
         <div class="details">{{- i18n "toc" | default "Table of Contents" }}</div>
       </summary>
-      <div class="inner">
+      <blockquote>
         {{- partial "toc.html" . }}
-      </div>
+      </blockquote>
     </details>
   </div>
   {{- end }}
   <div class="post-content">
     {{- partial "anchored_headings.html" .Content -}}
   </div>
+
+  {{- if (.Param "license") }}
+  {{- partial "license.html" . }}
+  {{- end }}
+  
   <footer class="post-footer">
     {{- if .Params.tags }}
     <ul class="post-tags">
